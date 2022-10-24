@@ -115,10 +115,10 @@ const SignUp = () => {
 
     return (
         <div className='w-full flex flex-col justify-center items-center'>
-            <div className='border-[1px] text-start border-solid border-[#ABABAB] w-[50%] mx-auto mt-[5%] px-[55px] py-[37px]'>
+            <div className='border-[1px] text-start border-solid border-[#ABABAB] lg:w-[50%] w-[90%] mx-auto mt-[5%] lg:px-[55px] px-10 py-[37px]'>
                 <h1 className='text-5xl font-bold'>Sign Up</h1>
                 <form onSubmit={handleSubmit} className='w-full'>
-                    <div className='flex justify-evenly w-full'>
+                    <div className='flex flex-col-reverse lg:flex-row justify-evenly w-full'>
                         <div className='mx-5 w-full'>
                             <div className='mt-[20px]'>
                                 <label className='block' htmlFor="name">User Name</label>
@@ -153,27 +153,27 @@ const SignUp = () => {
                             {error}
                         </p>
                     </div>
-                    <div className='mt-[20px] w-[20%] mx-auto font-bold text-xl'>
-                        <button disabled={!accepted} className={`bg-[#F9A51A] px-5 py-2 cursor-pointer ${!accepted ? 'bg-[#734b0c]' : 'bg-[#F9A51A]'}`} type="submit">Sign Up</button>
+                    <div className='mt-[20px] lg:w-[20%] w-full lg:mx-auto font-bold text-xl'>
+                        <button disabled={!accepted} className={`px-5 py-2 cursor-pointer ${!accepted ? 'bg-[#734b0c]' : 'bg-[#F9A51A]'}`} type="submit">Sign Up</button>
                     </div>
                     <p className='mt-2 font-bold text-xl'>
                         Already have an account ? <NavLink className={'text-blue-500'} to={'/auth/signin'}>Sign In</NavLink>
                     </p>
                 </form>
             </div>
-            <div className='flex items-center w-[25%] mt-[10px]'>
+            <div className='flex items-center w-[90%] lg:w-[25%] mt-[10px]'>
                 <hr className='border-1 border-solid border-black w-full' />
                 <p className='mx-[5px] text-xl font-bold'>Or</p>
                 <hr className='border-1 border-solid border-black w-full' />
             </div>
-            <div className='w-[30%]'>
+            <div className='lg:w-[30%] w-[90%]'>
                 <div onClick={handleFbSignIn} className='cursor-pointer px-2 py-2 my-2 flex items-center justify-between w-[100%] rounded-lg border-[1px] border-solid border-[#C7C7C7]'>
                     <img className='w-[37px] h-[37px]' src={fbIcon} alt="" />
-                    <p className='font-bold text-xl mr-56'>Continue with facebook</p>
+                    <p className='font-bold text-xl lg:mr-56'>Continue with facebook</p>
                 </div>
                 <div onClick={handleGoogleSignIn} className='cursor-pointer px-2 py-2 my-2 flex items-center justify-between w-[100%] rounded-lg border-[1px] border-solid border-[#C7C7C7]'>
                     <img className='w-[37px] h-[37px]' src={googleIcon} alt="" />
-                    <p className='font-bold text-xl mr-56'>Continue with google</p>
+                    <p className='font-bold text-xl lg:mr-56'>Continue with google</p>
                 </div>
             </div>
         </div>

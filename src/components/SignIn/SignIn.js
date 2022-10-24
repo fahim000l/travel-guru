@@ -58,7 +58,7 @@ const SignIn = () => {
 
     }
     return (
-        <div className='border-[1px] text-start border-solid border-[#ABABAB] w-[30%] mx-auto mt-[5%] px-[55px] py-[37px]'>
+        <div className='border-[1px] w-[90%] text-start border-solid border-[#ABABAB] lg:w-[30%] mx-auto mt-[5%] lg:px-[55px] px-10 py-[37px]'>
             <h1 className='text-5xl font-bold'>Sign In</h1>
             <form onSubmit={handleSubmit}>
                 <div className='mt-[53.97px]'>

@@ -31,22 +31,22 @@ const SignUp = () => {
         const conditions = form.conditions.checked;
         console.log(name, photoUrl, email, password, confirm, conditions);
 
-        // if (password.length < 6) {
-        //     setError('Password must contain at least 6 characters');
-        //     return;
-        // }
-        // if (!/(?=.*[A-Z].*[A-Z])/.test(password)) {
-        //     setError('Password must contsin at least 2 upper case latter');
-        //     return;
-        // }
-        // if (!/(?=.*[!@#$%^&*@])/.test(password)) {
-        //     setError('Password must contain at least one special character(!@#$%^&*@)');
-        //     return;
-        // }
-        // if (!/(?=.*\d)/.test(password)) {
-        //     setError('Password must contain at least one number(0-9)');
-        //     return;
-        // }
+        if (password.length < 6) {
+            setError('Password must contain at least 6 characters');
+            return;
+        }
+        if (!/(?=.*[A-Z].*[A-Z])/.test(password)) {
+            setError('Password must contsin at least 2 upper case latter');
+            return;
+        }
+        if (!/(?=.*[!@#$%^&*@])/.test(password)) {
+            setError('Password must contain at least one special character(!@#$%^&*@)');
+            return;
+        }
+        if (!/(?=.*\d)/.test(password)) {
+            setError('Password must contain at least one number(0-9)');
+            return;
+        }
 
         signUp(email, password)
             .then(result => {

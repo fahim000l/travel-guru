@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 import logo from './../../media/logo.png';
 import { FaUserCircle, FaBars } from 'react-icons/fa';
@@ -10,6 +10,7 @@ const Header = () => {
     const [searchView, setSearchView] = useState(true);
     const { user, logOut } = useContext(AuthContext);
     const [menu, setMenu] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         if ((location.pathname === '/auth/signin') || (location.pathname === '/auth/signup')) {
@@ -31,7 +32,7 @@ const Header = () => {
     return (
         <div className={`lg:flex justify-between items-center opacity-[2.5] font-bold w-[100%] p-5 ${searchView ? undefined : 'shadow-lg shadow-black'}`}>
             <div className='lg:w-[20%] w-full text-white lg:block flex items-center justify-between'>
-                <img className='lg:w-[100px] w-[60px] brightness-[100%] text-white lg:mx-[auto]' src={logo} alt="" />
+                <img onClick={() => navigate('/')} className='lg:w-[100px] cursor-pointer w-[60px] brightness-[100%] text-white lg:mx-[auto]' src={logo} alt="" />
                 <div className='w-full lg:hidden block'>
                     {
                         user?.uid &&

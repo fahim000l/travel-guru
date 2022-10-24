@@ -15,12 +15,12 @@ export const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/places'),
+                loader: () => fetch('https://easy-travel-server.vercel.app/places'),
             },
             {
                 path: '/bookinginfo/:id',
                 element: <PrivateRoute><BookingInfo></BookingInfo></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/places/${params.id}`)
+                loader: ({ params }) => fetch(`https://easy-travel-server.vercel.app/places/${params.id}`)
             }
         ],
     },

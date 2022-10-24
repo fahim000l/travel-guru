@@ -24,13 +24,13 @@ const SignIn = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                navigate(from, { replace: true });
-                // if (user.emailVerified) {
 
-                // }
-                // else {
-                //     Swal.fire('Your account is not verified yet');
-                // }
+                if (user.emailVerified) {
+                    navigate(from, { replace: true });
+                }
+                else {
+                    Swal.fire('Your account is not verified yet');
+                }
             })
             .catch(error => {
                 console.error(error);

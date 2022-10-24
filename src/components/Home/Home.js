@@ -8,10 +8,10 @@ const Home = () => {
     const places = useLoaderData();
     const [placeDetails, setPlaceDetails] = useState(places[0].details);
     const [title, setTitle] = useState(places[0].name);
-    const [placeId, setPlaceId] = useState(0);
-
+    const [placeId, setPlaceId] = useState(1);
+    console.log(title, placeDetails);
     return (
-        <div className='w-full flex mt-[10%]'>
+        <div className='w-full flex mt-[10%] overflow-y-auto'>
             <div className='w-[40%] text-white ml-[150px] mr-[50px] text-start'>
                 <div>
                     <div className='font-bold text-5xl'>

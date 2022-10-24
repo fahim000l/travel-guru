@@ -4,7 +4,7 @@ import './Main.css';
 
 const Main = () => {
     return (
-        <div className='background-img pb-[9.8%]'>
+        <div className='background-img pb-[10.8%]'>
             <Header></Header>
             <Outlet></Outlet>
         </div>
